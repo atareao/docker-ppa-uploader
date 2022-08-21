@@ -10,7 +10,7 @@ required build tools and how to use it to upload packages to PPA.
 This is an original idea and initial code of Tero Saarni, as you can see in
 the LICENSE
 
-## Create build environment
+## Create upload environment
 
 Start by building a container that will act as package build environment:
 
@@ -21,10 +21,10 @@ docker build -t docker-ppa-uploader:22.04 -f Dockerfile-ubuntu-22.04 .
 In this example the target is Ubuntu 22.04 but you can create and
 modify `Dockerfile-nnn` to match your target environment.
 
-## Building packages
+## Uploading packages
 
 First download or git clone the source code of the package you are
-building:
+uploading:
 
 ```bash
 git clone ... ~/my-package-source
@@ -50,9 +50,8 @@ Options:
 
 To upload packages run following commands:
 
-    # build package from source directory
 ```bash
-./build -i docker-ppa-uploader:22.04 ~/my-package-source
+./upload -i docker-ppa-uploader:22.04 ~/my-package-source
 ```
 
 Sometimes build might require dependencies that cannot be installed with
@@ -61,7 +60,7 @@ by passing option `-d DIR` where DIR is a directory with `*.deb` files
 in it.
 
 ```bash
-./build -i docker-ppa-uploader:22.04 -d dependencies ~/my-package-source
+./upload -i docker-ppa-uploader:22.04 -d dependencies ~/my-package-source
 ```
 
 ## Change  version
