@@ -36,7 +36,7 @@ least a minimum set of packaging files: `control`, `copyright`,
 `changelog` and `rules`.
 
 Clone the
-[docker-deb-builder](https://github.com/atareao/docker-ppa-uploader)
+[docker-ppa-uploader](https://github.com/atareao/docker-ppa-uploader)
 (the repository you are reading now) and run the build script to see
 usage:
 
